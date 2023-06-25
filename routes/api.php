@@ -5,7 +5,8 @@ use App\Http\Controllers\Api\V1\Admin\CategoryApiController;
 use App\Http\Controllers\Api\V1\Admin\LocationApiController;
 use App\Http\Controllers\Api\V1\Admin\ReviewApiController;
 
-Route::group(['prefix' => 'v1', 'as' => 'api.', 'middleware' => ['auth:sanctum']], function () {
+//Route::group(['prefix' => 'v1', 'as' => 'api.', 'middleware' => ['auth:sanctum']], function () {
+Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     // Location
     Route::post('locations/media', [LocationApiController::class, 'storeMedia'])->name('locations.store_media');
     Route::apiResource('locations', LocationApiController::class)->except(['index']);
@@ -22,4 +23,5 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'middleware' => ['auth:sanctum']
 });
 
 
-Route::get('v1/locations', [LocationApiController::class, 'index'])->name('locations.index');
+//Route::get('v1/locations', [LocationApiController::class, 'index'])->name('locations.index');
+//Route::get('v1/locations/{location}', [LocationApiController::class, 'show'])->name('locations.show');
