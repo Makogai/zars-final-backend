@@ -38,7 +38,7 @@ class LocationApiController extends Controller
 
     public function show(Location $location)
     {
-        abort_if(Gate::denies('location_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+//        abort_if(Gate::denies('location_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         return new LocationResource($location->load(['cetagory']));
     }
