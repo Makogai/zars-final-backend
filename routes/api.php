@@ -9,7 +9,7 @@ use App\Http\Controllers\Api\V1\Admin\ReviewApiController;
 Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     // Location
     Route::post('locations/media', [LocationApiController::class, 'storeMedia'])->name('locations.store_media');
-    Route::apiResource('locations', LocationApiController::class)->except(['index']);
+    Route::apiResource('locations', LocationApiController::class);
 
     // Category
     Route::apiResource('categories', CategoryApiController::class);
