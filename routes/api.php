@@ -11,6 +11,8 @@ Route::group(['prefix' => 'v1', 'as' => 'api.'], function () {
     Route::post('locations/media', [LocationApiController::class, 'storeMedia'])->name('locations.store_media');
     Route::apiResource('locations', LocationApiController::class);
 
+    Route::get('home-places', [LocationApiController::class, 'homePlaces'])->name('locations.home_places');
+    Route::post('add-review', [LocationApiController::class, 'addReview'])->name('locations.add_review');
     // Category
     Route::apiResource('categories', CategoryApiController::class);
 

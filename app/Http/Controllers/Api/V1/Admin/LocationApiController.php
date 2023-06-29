@@ -20,7 +20,14 @@ class LocationApiController extends Controller
     {
 //        abort_if(Gate::denies('location_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new LocationResource(Location::with(['cetagory'])->get());
+        return new LocationResource(Location::with(['cetagory'])->orderBy('id', 'desc')->get());
+    }
+
+    public function homePlaces()
+    {
+//        abort_if(Gate::denies('location_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+
+        return new LocationResource(Location::with(['cetagory'])->orderBy('id', 'desc')->take(9)->get());
     }
 
     public function store(StoreLocationRequest $request)
@@ -40,7 +47,18 @@ class LocationApiController extends Controller
     {
 //        abort_if(Gate::denies('location_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        return new LocationResource($location->load(['cetagory']));
+        return new LocationResource($location->load(['cetagory', 'reviews']));
+    }
+
+    public function addReview(){
+        $data = request()->validate([
+            'location_id' => 'required',
+            'title' => 'required',
+            'description' => 'required',
+            'rating' => 'required',
+        ]);
+        $review = \App\Models\Review::create($data);
+        return response()->json($review);
     }
 
     public function update(UpdateLocationRequest $request, Location $location)

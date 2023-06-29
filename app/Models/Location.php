@@ -20,6 +20,7 @@ class Location extends Model implements HasMedia
 
     protected $appends = [
         'images',
+        'total_rating',
     ];
 
     protected $dates = [
@@ -92,6 +93,16 @@ class Location extends Model implements HasMedia
     public function cetagory()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function getTotalRatingAttribute()
+    {
+        return $this->reviews()->avg('rating');
     }
 
     public function getCreatedAtAttribute($value)
