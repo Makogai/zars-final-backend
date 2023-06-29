@@ -79,6 +79,22 @@
                                 @endif
                             </td>
                         </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.location.fields.lat') }}
+                            </th>
+                            <td>
+                                {{ $location->lat }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                {{ trans('cruds.location.fields.lng') }}
+                            </th>
+                            <td>
+                                {{ $location->lng }}
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             RoleUserTableSeeder::class,
         ]);
 
-        $categories = ["South", "North", "East", "West"];
+        $categories = ["South", "North", "East", "West", "Central"];
         foreach ($categories as $category) {
             \App\Models\Category::create([
                 'name' => $category,

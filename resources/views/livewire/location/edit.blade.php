@@ -60,6 +60,26 @@
             {{ trans('cruds.location.fields.cetagory_helper') }}
         </div>
     </div>
+    <div class="form-group {{ $errors->has('location.lat') ? 'invalid' : '' }}">
+        <label class="form-label" for="lat">{{ trans('cruds.location.fields.lat') }}</label>
+        <input class="form-control" type="text" name="lat" id="lat" wire:model.defer="location.lat" >
+        <div class="validation-message">
+            {{ $errors->first('location.lat') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.location.fields.lat_helper') }}
+        </div>
+    </div>
+    <div class="form-group {{ $errors->has('location.lng') ? 'invalid' : '' }}">
+        <label class="form-label" for="lng">{{ trans('cruds.location.fields.lng') }}</label>
+        <input class="form-control" type="text" name="lng" id="lng" wire:model.defer="location.lng">
+        <div class="validation-message">
+            {{ $errors->first('location.lng') }}
+        </div>
+        <div class="help-block">
+            {{ trans('cruds.location.fields.lng_helper') }}
+        </div>
+    </div>
 
     <div class="form-group">
         <button class="btn btn-indigo mr-2" type="submit">

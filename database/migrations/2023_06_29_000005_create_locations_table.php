@@ -14,6 +14,8 @@ class CreateLocationsTable extends Migration
             $table->longText('description')->nullable();
             $table->float('rating', 15, 1)->nullable();
             $table->decimal('price', 15, 2)->nullable();
+            $table->text('lat')->nullable();
+            $table->text('lng')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

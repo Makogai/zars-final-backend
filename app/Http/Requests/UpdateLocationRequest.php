@@ -48,6 +48,14 @@ class UpdateLocationRequest extends FormRequest
                 'exists:categories,id',
                 'required',
             ],
+            'lat' => [
+                'numeric',
+                'nullable',
+            ],
+            'lng' => [
+                'numeric',
+                'nullable',
+            ],
         ];
     }
 }

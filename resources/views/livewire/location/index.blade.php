@@ -68,6 +68,14 @@
                             @include('components.table.sort', ['field' => 'cetagory.name'])
                         </th>
                         <th>
+                            {{ trans('cruds.location.fields.lat') }}
+                            @include('components.table.sort', ['field' => 'lat'])
+                        </th>
+                        <th>
+                            {{ trans('cruds.location.fields.lng') }}
+                            @include('components.table.sort', ['field' => 'lng'])
+                        </th>
+                        <th>
                         </th>
                     </tr>
                 </thead>
@@ -103,6 +111,12 @@
                                 @if($location->cetagory)
                                     <span class="badge badge-relationship">{{ $location->cetagory->name ?? '' }}</span>
                                 @endif
+                            </td>
+                            <td>
+                                {{ $location->lat }}
+                            </td>
+                            <td>
+                                {{ $location->lng }}
                             </td>
                             <td>
                                 <div class="flex justify-end">

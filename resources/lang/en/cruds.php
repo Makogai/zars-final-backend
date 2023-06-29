@@ -95,6 +95,10 @@ return [
             'deleted_at_helper'  => ' ',
             'cetagory'           => 'Cetagory',
             'cetagory_helper'    => ' ',
+            'lat'                => 'Lat',
+            'lat_helper'         => ' ',
+            'lng'                => 'Lng',
+            'lng_helper'         => ' ',
         ],
     ],
     'category' => [

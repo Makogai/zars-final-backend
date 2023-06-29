@@ -105,6 +105,14 @@ class Edit extends Component
                 'exists:categories,id',
                 'required',
             ],
+            'location.lat' => [
+                'numeric',
+                'nullable',
+            ],
+            'location.lng' => [
+                'numeric',
+                'nullable',
+            ],
         ];
     }
 
